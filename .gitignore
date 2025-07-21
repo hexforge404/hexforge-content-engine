@@ -1,0 +1,21 @@
+# Ignore all video, audio, logs, and temp outputs
+*.mkv
+*.mp4
+*.wav
+*.log
+*.zip
+*.7z
+
+# Ignore assets and project data (except folder structure)
+windows/HexForgeRunner/assets/*
+windows/HexForgeRunner/projects/*
+windows/HexForgeRunner/Logs/*
+
+# Allow .gitkeep files to preserve structure
+!windows/HexForgeRunner/assets/.gitkeep
+!windows/HexForgeRunner/projects/.gitkeep
+!windows/HexForgeRunner/Logs/.gitkeep
+
+# Ignore OBS profiles, temp folders if needed
+windows/HexForgeRunner/assets/OBS-Profiles/*
+!windows/HexForgeRunner/assets/OBS-Profiles/.gitkeep
