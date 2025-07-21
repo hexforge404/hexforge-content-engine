@@ -1,111 +1,83 @@
-[📄 View HexForgeRunner documentation →](docs/runner.md)
+# 🚀 HexForge Content Automation Engine
 
-**HexForgeRunner** is a PowerShell-based content automation tool designed for developers and creators who want to capture dev sessions, screen recordings, and terminal logs, then send them to a remote AI engine for blog and media generation.
-
-Built as part of the **HexForge Content Automation Engine**, this Windows-side toolkit launches OBS, tracks your session, collects logs and video, and packages everything for upload and processing.
-
-## ✨ Key Features
-
-* Launches labeled shell sessions with logging
-* Integrates with OBS Studio for screen recording
-* Monitors OBS to auto-stop capture
-* Builds JSON blog metadata from session logs
-* Sends session data to a remote engine via SCP
-* Reusable project and part naming system
-* Automated folder structure and asset management
-
-## 🧰 Tech Stack
-
-* PowerShell 5+ (Windows)
-* OBS Studio
-* SCP (OpenSSH or PuTTY)
-* Remote Linux server with AI processing engine
+> Self-hosted AI pipeline to turn dev sessions into polished blogs, media, and narrated content.
 
 ---
 
-[📄 View Backend Engine documentation →](docs/backend.md)
+## 🧠 What Is This?
 
-*Last Updated: July 18, 2025*
+**HexForge Content Engine** automates developer storytelling. It transforms screen recordings + CLI logs into:
 
-## 🧠 Overview
-
-The HexForge Content Automation Engine is a multi-part AI-powered pipeline that transforms screen-recorded development sessions into structured blogs, media packs, and Notion content blocks. The system includes:
-
-* A dual-platform recording and packaging frontend (Windows + Linux)
-* A processing backend hosted on Proxmox with AI toolchain integration
-* Scripts for video + log ingestion, blog generation, voice narration, and asset export
-
-## 💻 Platform Components
-
-### 🪟 Windows Capture Interface
-
-* **Location:** `C:\Users\kon-boot\Documents\WindowsPowerShell\Modules\HexForgeRunner\`
-* **Core Features:**
-
-  * OBS recording launcher
-  * CLI session logging (via `hexforge-shell.ps1`)
-  * Packager (`pack-and-send.ps1`) with SCP transfer to Proxmox
-  * Clipboard-to-chat saver (WIP)
-
-### 🐧 Linux Capture Node
-
-* **Host:** MX Linux (`hex-sandbox`)
-* **Tools Installed:** OBS, CLI logger, Flatpak support
-* **Status:** Wired into the content pipeline and operational
-
-[📄 View Proxmox Backend details →](docs/backend.md#proxmox-backend-engine)
-
-**Root Directory:** `/mnt/hdd-storage/hexforge-content-engine`
-
-### 📁 Key Directories
-
-| Folder                    | Purpose                                                    |
-| ------------------------- | ---------------------------------------------------------- |
-| `scripts/`                | Blog generation, AI prompt pipelines, scoring, uploading   |
-| `assets/`                 | Generated output: images, voice, logs, final markdown      |
-| `logs/`                   | Session logs from CLI or pipeline run                      |
-| `input/`                  | Input JSONs created by CLI or `buildBlogJsonFromAssets.js` |
-| `output/`                 | Final rendered blog text, audio, and metadata              |
-| `uploads/`                | SCP-drop folder for incoming session archives              |
-| `hexforge_prompt_runner/` | AI prompt loop, multi-seed logic, LLaVA scoring            |
-
-### 📜 Scripts Extracted
-
-* `runFullPipeline.sh` – Full pipeline launcher (blog, voice, asset gen)
-* `transcribe-audio.sh` – Audio-to-text processor for narration
-* `bulkUploadBlogs.js` – Upload multiple blog markdown files to API
-* `generateBlogFromJSON.js` – Converts blog.json to full markdown
-* `buildBlogJsonFromAssets.js` – Constructs input JSON from logs/videos
-* `score_image.py` – Image quality scoring module (used in prompt loop)
-* `validateAndAssemble.sh` – Final merge and cleanup
-* `install-a1111-as-devuser.sh` – Installer for Stable Diffusion GUI
-
-## 🧠 Toolchain Summary
-
-| Tool/Model                | Role                                          |
-| ------------------------- | --------------------------------------------- |
-| `Ollama` (Mistral)        | AI for blog/narration text generation         |
-| `SadTalker` + `TTSTalker` | Text-to-speech voice output                   |
-| `Wav2Lip`                 | Lip-sync voice to video avatar                |
-| `ComfyUI`                 | Image generation and prompt loop runner       |
-| `LLaVA`                   | Image scorer + feedback loop in prompt runner |
-
-## 🔁 Workflow Summary
-
-1. **Session Start:** OBS + CLI logger launched (Windows or Linux)
-2. **Session End:** Assets zipped and sent to `/uploads/` via SCP
-3. **Extraction & Pairing:** `watchAndProcessZips.sh` unpacks session and invokes pipeline
-4. **Blog Build:** `buildBlogJsonFromAssets.js` → `generateBlogFromJSON.js`
-5. **Voice Gen:** `generateVoiceFromBlog.js` → `SadTalker` or `TTS`
-6. **Asset Assembly:** Images scored, merged, voice and blog exported
-7. **Post Upload:** Markdown uploaded via `bulkUploadBlogs.js` or saved locally
-
-## 🧩 Current Status
-
-* ✅ Windows-side HexForgeRunner fully operational
-* ✅ Linux MX sandbox wired into capture and CLI logging
-* ✅ Pipeline end-to-end works from log/video to blog/audio
-* ⚠️ Image refinement loop (prompt runner) in progress
-* 🔄 Blog editor integration with `/api/blog` to be finalized
+* 📝 Blog posts (Markdown)
+* 🎧 AI-narrated voiceovers
+* 🎥 Avatar videos with synced lip animation
+* 🖼️ Generated images using Stable Diffusion
 
 ---
+
+## 🧭 Full Workflow Overview
+
+📄 **Detailed Docs:** See [`docs/workflow.md`](docs/workflow.md)
+
+```bash
+1. Launch shell + OBS (Windows or Linux)
+2. Capture logs, screen, and chat
+3. Send to backend via SCP
+4. Blog + voice auto-generated
+5. Images rendered with prompt engine
+6. Final assets zipped or uploaded
+```
+
+---
+
+## 🧩 Modules & Docs
+
+| Module                    | Description                                | Docs                                            |
+| ------------------------- | ------------------------------------------ | ----------------------------------------------- |
+| 🪟 **HexForgeRunner**     | PowerShell interface for OBS + CLI logging | [runner.md](docs/runner.md)                     |
+| 🐧 **Linux Capture Node** | MX Linux logger and OBS mirror             | [linux-capture.md](docs/linux-capture.md)       |
+| 🧠 **Backend Scripts**    | Blog, voice, and asset generation engine   | [scripts-overview.md](docs/scripts-overview.md) |
+| 🎧 **Audio Engine**       | TTS narration and avatar sync              | [audio.md](docs/audio.md)                       |
+| 🎥 **Video Engine**       | Subtitle + video rendering tools           | [video.md](docs/video.md)                       |
+| 🎨 **Prompt Optimizer**   | Image scoring + refinement loop            | [prompt.md](docs/prompt.md)                     |
+| 🖼️ **Image Engine**      | Stable Diffusion + ComfyUI integration     | [image.md](docs/image.md)                       |
+
+---
+
+## 🗂 Repo Layout
+
+```bash
+hexforge-content-engine/
+├── docs/                  # Documentation per module
+├── windows/HexForgeRunner/  # PowerShell scripts + assets
+│   ├── assets/            # Screenshots, video, logs (empty in repo)
+│   ├── projects/          # Session folders (empty in repo)
+├── .gitignore
+├── README.md              # You are here
+```
+
+---
+
+## ✅ Status
+
+* ✅ End-to-end blog + voice + image pipeline working
+* ✅ Modular script system (Windows + Linux)
+* ⚙️ Blog editor upload in progress
+* 🧪 Prompt scoring loop running + saving variants
+* 🔜 Final video assembler + dashboard planned
+
+---
+
+## 🔗 External Tools Used
+
+* [OBS Studio](https://obsproject.com/)
+* [SadTalker](https://github.com/OpenTalker/SadTalker)
+* [Wav2Lip](https://github.com/Rudrabha/Wav2Lip)
+* [ComfyUI](https://github.com/comfyanonymous/ComfyUI)
+* [LLaVA](https://llava-vl.github.io/)
+* [Whisper](https://github.com/openai/whisper)
+* [Mistral via Ollama](https://ollama.com/)
+
+---
+
+🔁 See [`docs/workflow.md`](docs/workflow.md) for full pipeline breakdown.
