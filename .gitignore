@@ -1,0 +1,12 @@
+# ignore virtual environments
+venv/
+.venv/
+
+# ignore node_modules
+node_modules/
+
+# ignore OS/editor artifacts
+.DS_Store
+*.swp
+*.log
+
