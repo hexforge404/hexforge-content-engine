@@ -1,0 +1,63 @@
+# ───── 🔐 Secrets ─────
+.env
+.env.*
+
+# ───── 🐍 Python ─────
+__pycache__/
+*.pyc
+.venv/
+
+# ───── 🟩 Node.js ─────
+node_modules/
+package-lock.json
+
+# ───── 🧪 Test + Scratch Output ─────
+output/
+uploads/
+logs/
+input/
+assets/
+blog_output/
+drafts/
+posted/
+*.zip
+
+# ───── 🤖 Engine + Tool Output ─────
+hexforge_prompt_runner/__pycache__/
+*.log
+*.tmp
+
+# ───── 🧠 VS Code settings ─────
+.vscode/
+
+# ───── 🍏 macOS / Linux ─────
+.DS_Store
+*.swp
+
+# ───── 📼 Ignore all video, audio, logs, and temp outputs ─────
+*.mkv
+*.mp4
+*.wav
+*.log
+*.zip
+*.7z
+
+# ───── 📁 Ignore Windows-side asset data ─────
+windows/HexForgeRunner/assets/*
+windows/HexForgeRunner/projects/*
+windows/HexForgeRunner/Logs/*
+
+# ───── ✅ Preserve structure via .gitkeep ─────
+!windows/HexForgeRunner/assets/.gitkeep
+!windows/HexForgeRunner/projects/.gitkeep
+!windows/HexForgeRunner/Logs/.gitkeep
+
+# ───── 🎥 OBS Profiles ─────
+windows/HexForgeRunner/assets/OBS-Profiles/*
+!windows/HexForgeRunner/assets/OBS-Profiles/.gitkeep
+
+venv/
+venv/
+node_modules/
+*.log
+__pycache__/
