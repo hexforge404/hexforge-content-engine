@@ -1,0 +1,7 @@
+{
+  "project": "assistant-chat",
+  "part": "dev",
+  "prompt": "hexforge skull logo glowing on dark terminal background",
+  "num_images": 2,
+  "workflow": "hexforge-default"
+}

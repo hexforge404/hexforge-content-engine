@@ -16,7 +16,10 @@ LOGS_FAILED = BASE / "logs" / "comfy-jobs" / "failed"
 
 # 🔧 Path to your existing ComfyUI runner
 # Adjust if your script lives somewhere else
-COMFY_RUNNER = BASE / "loop_prompt_generator.py"
+COMFY_RUNNER = BASE / "linux" / "HexForgeEngine" / "scripts" / "prompt-optimizer_old" / "loop_prompt_generator.py"
+
+
+
 
 
 def ensure_dirs():
