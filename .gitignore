@@ -29,3 +29,5 @@ windows/HexForgeRunner/Logs/*
 windows/HexForgeRunner/assets/OBS-Profiles/*
 !windows/HexForgeRunner/assets/OBS-Profiles/.gitkeep
 
+incoming-blogs/
+incoming-images/
