@@ -5,6 +5,7 @@ import os
 import shutil
 import subprocess
 from pathlib import Path
+import sys
 
 from watchfiles import awatch, Change
 
@@ -16,7 +17,11 @@ LOGS_FAILED = BASE / "logs" / "comfy-jobs" / "failed"
 
 # 🔧 Path to your existing ComfyUI runner
 # Adjust if your script lives somewhere else
-COMFY_RUNNER = BASE / "linux" / "HexForgeEngine" / "scripts" / "prompt-optimizer_old" / "loop_prompt_generator.py"
+COMFY_RUNNER = BASE / "linux" / "HexForgeEngine" / "scripts" / "simple_comfy_runner.py"
+
+print(f"[watcher] Using COMFY_RUNNER = {COMFY_RUNNER}")
+print(f"[watcher] Script file = {__file__}")
+
 
 
 
@@ -37,14 +42,14 @@ def run_comfy_job(project: str, part: str, prompt: str, num_images: int) -> bool
     Tweak the args if your script differs.
     """
     cmd = [
-        "python",
+        sys.executable,
         str(COMFY_RUNNER),
-        "--prompt",
-        prompt,
         "--project",
         project,
         "--part",
         part,
+        "--prompt",
+        prompt,
         "--num-images",
         str(num_images),
     ]
@@ -58,6 +63,8 @@ def run_comfy_job(project: str, part: str, prompt: str, num_images: int) -> bool
     )
 
     log_text = proc.stdout or ""
+    log_text = f"[JOB META] project={project} part={part} prompt={prompt!r} num_images={num_images}\n\n"
+    log_text += proc.stdout or ""
     print(log_text)
 
     # Optional: write a per-job log
