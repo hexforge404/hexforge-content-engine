@@ -1,0 +1,54 @@
+
+
+=== NEW RUN ===
+Traceback (most recent call last):
+  File "/mnt/hdd-storage/hexforge-content-engine/linux/HexForgeEngine/scripts/prompt-optimizer_old/loop_prompt_generator.py", line 1, in <module>
+    import requests 
+    ^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'requests'
+
+
+=== NEW RUN ===
+Traceback (most recent call last):
+  File "/mnt/hdd-storage/hexforge-content-engine/linux/HexForgeEngine/scripts/prompt-optimizer_old/loop_prompt_generator.py", line 11, in <module>
+    import graphviz
+ModuleNotFoundError: No module named 'graphviz'
+
+
+=== NEW RUN ===
+usage: loop_prompt_generator.py [-h]
+loop_prompt_generator.py: error: unrecognized arguments: --prompt HexForge Labs logo glowing on a workbench --project audit-test --part part-004 --num-images 2
+
+
+=== NEW RUN ===
+[JOB META] project=audit-test part=part-004 prompt='HexForge Labs logo glowing on a workbench' num_images=2
+
+Traceback (most recent call last):
+  File "/mnt/hdd-storage/hexforge-content-engine/linux/HexForgeEngine/scripts/prompt-optimizer_old/loop_prompt_generator.py", line 27, in <module>
+    print(f"[DEBUG] Creating directories: {config['output_dir']} and {os.path.dirname(config['log_file'])}")
+                                           ~~~~~~^^^^^^^^^^^^^^
+KeyError: 'output_dir'
+
+
+=== NEW RUN ===
+[JOB META] project=audit-test part=part-004 prompt='HexForge Labs logo glowing on a workbench' num_images=2
+
+[DEBUG] Creating directories: /mnt/hdd-storage/hexforge-content-engine/assets/default/part1/images and /mnt/hdd-storage/hexforge-content-engine/logs/comfy-jobs
+
+=== Starting seed branch #1 ===
+Traceback (most recent call last):
+  File "/mnt/hdd-storage/hexforge-content-engine/linux/HexForgeEngine/scripts/prompt-optimizer_old/loop_prompt_generator.py", line 112, in <module>
+    prompt_variant = clean_prompt_for_shell(prompt_variant)
+                     ^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'clean_prompt_for_shell' is not defined
+
+
+=== NEW RUN ===
+[JOB META] project=audit-test part=part-004 prompt='HexForge Labs logo glowing on a workbench' num_images=2
+
+[simple-runner] Project=audit-test Part=part-004
+[simple-runner] Output dir: /mnt/hdd-storage/hexforge-content-engine/assets/audit-test/part-004/images
+[simple-runner] Prompt: 'HexForge Labs logo glowing on a workbench', num_images=2
+[simple-runner] Posting 1/2 to ComfyUI with prefix=audit-test_part-004_n1 ...
+[simple-runner] Posting 2/2 to ComfyUI with prefix=audit-test_part-004_n2 ...
+[simple-runner] Done.

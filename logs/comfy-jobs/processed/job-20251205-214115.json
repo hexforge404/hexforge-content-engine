@@ -1,0 +1,7 @@
+{
+  "project": "optimizer-test",
+  "part": "part-003",
+  "prompt": "HexForge Labs logo glowing on a workbench",
+  "num_images": 3,
+  "workflow": "hexforge-default"
+}

@@ -1,0 +1,7 @@
+{
+  "project": "string",
+  "part": "string",
+  "prompt": "string",
+  "num_images": 4,
+  "workflow": "hexforge-default"
+}

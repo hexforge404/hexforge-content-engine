@@ -1,0 +1,7 @@
+{
+  "project": "audit-test",
+  "part": "part-001",
+  "prompt": "HexForge Labs logo glowing on a workbench",
+  "num_images": 2,
+  "workflow": "hexforge-default"
+}

@@ -1,0 +1,68 @@
+[
+  {
+    "round": 1,
+    "variant": 1,
+    "filename": "/root/ai-tools/ComfyUI/output/hexforge-debug_t1_r1_v1_00002_.png",
+    "prompt": "cyberpunk workstation with glowing holograms",
+    "negative_prompt": "low detail, out of focus, boring background, distorted anatomy, plastic look, missing electronics, blurry textures",
+    "score": 0.0,
+    "clip": 0.0,
+    "aesthetic": 0.0,
+    "timestamp": "2025-12-09T18:34:33"
+  },
+  {
+    "round": 1,
+    "variant": 2,
+    "filename": "/root/ai-tools/ComfyUI/output/hexforge-debug_t1_r1_v2_00002_.png",
+    "prompt": "cyberpunk workstation with glowing holograms",
+    "negative_prompt": "low detail, out of focus, boring background, distorted anatomy, plastic look, missing electronics, blurry textures",
+    "score": 0.0,
+    "clip": 0.0,
+    "aesthetic": 0.0,
+    "timestamp": "2025-12-09T18:34:33"
+  },
+  {
+    "round": 1,
+    "variant": 3,
+    "filename": "/root/ai-tools/ComfyUI/output/hexforge-debug_t1_r1_v3_00002_.png",
+    "prompt": "cyberpunk workstation with glowing holograms",
+    "negative_prompt": "low detail, out of focus, boring background, distorted anatomy, plastic look, missing electronics, blurry textures",
+    "score": 0.0,
+    "clip": 0.0,
+    "aesthetic": 0.0,
+    "timestamp": "2025-12-09T18:34:33"
+  },
+  {
+    "round": 2,
+    "variant": 1,
+    "filename": "/root/ai-tools/ComfyUI/output/hexforge-debug_t1_r2_v1_00001_.png",
+    "prompt": "cyberpunk workstation with glowing holograms",
+    "negative_prompt": "low detail, out of focus, boring background, distorted anatomy, plastic look, missing electronics, blurry textures",
+    "score": 0.0,
+    "clip": 0.0,
+    "aesthetic": 0.0,
+    "timestamp": "2025-12-09T18:34:33"
+  },
+  {
+    "round": 2,
+    "variant": 2,
+    "filename": "/root/ai-tools/ComfyUI/output/hexforge-debug_t1_r2_v2_00001_.png",
+    "prompt": "cyberpunk workstation with glowing holograms",
+    "negative_prompt": "low detail, out of focus, boring background, distorted anatomy, plastic look, missing electronics, blurry textures",
+    "score": 0.0,
+    "clip": 0.0,
+    "aesthetic": 0.0,
+    "timestamp": "2025-12-09T18:34:33"
+  },
+  {
+    "round": 2,
+    "variant": 3,
+    "filename": "/root/ai-tools/ComfyUI/output/hexforge-debug_t1_r2_v3_00001_.png",
+    "prompt": "cyberpunk workstation with glowing holograms",
+    "negative_prompt": "low detail, out of focus, boring background, distorted anatomy, plastic look, missing electronics, blurry textures",
+    "score": 0.0,
+    "clip": 0.0,
+    "aesthetic": 0.0,
+    "timestamp": "2025-12-09T18:34:33"
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "project": "hexforge-debug",
+  "part": "t1",
+  "best_score": 0.0,
+  "best_prompt": "cyberpunk workstation with glowing holograms",
+  "best_image": "/root/ai-tools/ComfyUI/output/hexforge-debug_t1_r1_v1_00002_.png",
+  "generated_at": "2025-12-09T18:49:35",
+  "target_score": 7.5,
+  "max_rounds": 3,
+  "variants_per_round": 3
+}

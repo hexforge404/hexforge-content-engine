@@ -1,0 +1,11 @@
+{
+  "project": "hexforge-content-engine",
+  "part": "part3",
+  "best_score": 0.0,
+  "best_prompt": "cyberpunk homelab hero in front of glowing racks",
+  "best_image": "/root/ai-tools/ComfyUI/output/hexforge-content-engine_part3_r1_v1_00006_.png",
+  "generated_at": "2025-12-09T17:36:28",
+  "target_score": 7.5,
+  "max_rounds": 3,
+  "variants_per_round": 3
+}

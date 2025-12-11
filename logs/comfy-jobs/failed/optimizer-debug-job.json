@@ -1,0 +1,7 @@
+{
+  "project": "hexforge-debug",
+  "part": "t1",
+  "prompt": "cyberpunk workstation with glowing holograms",
+  "engine": "optimizer",
+  "num_images": 3
+}
